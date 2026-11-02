@@ -1,0 +1,126 @@
+{
+  "dataset": "CMU optical motion capture, Hahne BVH conversion",
+  "captures": 32,
+  "seed": 41,
+  "epochs": 35,
+  "best_epoch": 34,
+  "input_frames": 15,
+  "horizon_frames": 15,
+  "fps": 30,
+  "unit": "mean non-root joint position error as percent of observed body scale",
+  "splits": {
+    "validation": {
+      "sequence_mean": {
+        "mlp": 3.3227691054344177,
+        "persistence": 5.601508259773254,
+        "constant_velocity": 13.322212161986617
+      },
+      "sequences": [
+        {
+          "file": "35_01.bvh",
+          "windows": 5,
+          "mlp": 2.1127660274505615,
+          "persistence": 5.207379341125488,
+          "constant_velocity": 5.216349860550143
+        },
+        {
+          "file": "35_02.bvh",
+          "windows": 5,
+          "mlp": 2.084728240966797,
+          "persistence": 3.9276480674743652,
+          "constant_velocity": 7.24961983784767
+        },
+        {
+          "file": "35_17.bvh",
+          "windows": 1,
+          "mlp": 4.6640167236328125,
+          "persistence": 6.3949809074401855,
+          "constant_velocity": 20.392898250734703
+        },
+        {
+          "file": "35_18.bvh",
+          "windows": 1,
+          "mlp": 4.4295654296875,
+          "persistence": 6.8760247230529785,
+          "constant_velocity": 20.429980698813946
+        }
+      ],
+      "windows": 12
+    },
+    "test": {
+      "sequence_mean": {
+        "mlp": 3.2933110892772675,
+        "persistence": 7.168251991271973,
+        "constant_velocity": 9.625467470654618
+      },
+      "sequences": [
+        {
+          "file": "38_01.bvh",
+          "windows": 4,
+          "mlp": 2.545241117477417,
+          "persistence": 6.059680938720703,
+          "constant_velocity": 7.269076312534375
+        },
+        {
+          "file": "38_02.bvh",
+          "windows": 6,
+          "mlp": 2.5750341415405273,
+          "persistence": 4.08649206161499,
+          "constant_velocity": 9.28922007544399
+        },
+        {
+          "file": "38_03.bvh",
+          "windows": 11,
+          "mlp": 7.782202243804932,
+          "persistence": 8.412073135375977,
+          "constant_velocity": 15.94009992866814
+        },
+        {
+          "file": "38_04.bvh",
+          "windows": 142,
+          "mlp": 5.22094202041626,
+          "persistence": 5.852818489074707,
+          "constant_velocity": 8.007874751220106
+        },
+        {
+          "file": "39_01.bvh",
+          "windows": 5,
+          "mlp": 2.0230581760406494,
+          "persistence": 5.88380241394043,
+          "constant_velocity": 8.184234555619579
+        },
+        {
+          "file": "39_02.bvh",
+          "windows": 5,
+          "mlp": 2.0894269943237305,
+          "persistence": 9.98501968383789,
+          "constant_velocity": 11.958746888076247
+        },
+        {
+          "file": "39_03.bvh",
+          "windows": 5,
+          "mlp": 2.182631492614746,
+          "persistence": 10.039532661437988,
+          "constant_velocity": 9.334922316431602
+        },
+        {
+          "file": "39_04.bvh",
+          "windows": 5,
+          "mlp": 1.927952527999878,
+          "persistence": 7.026596546173096,
+          "constant_velocity": 7.0195649372429045
+        }
+      ],
+      "windows": 183
+    }
+  },
+  "train_windows": 320,
+  "selected_method": "mlp",
+  "selection": "lowest validation sequence-mean error; no test selection",
+  "limitations": [
+    "32-capture locomotion pilot",
+    "session IDs disjoint; identity separation not guaranteed by CMU",
+    "root-relative pose only, not global translation, force or collision prediction",
+    "no physical robot or clinical validation"
+  ]
+}
